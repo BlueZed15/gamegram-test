@@ -36,7 +36,7 @@ async def save_json_string(level_file=Form(...),sandbox_id=Form(...),creator_id=
 
 
 @router.get("/getjson")
-def get_json(game_id=Form(...)):
+def get_json(game_id: str):
     if game_id!=json_data["game_id"]:
         return HTMLResponse(content="Incorrect game_id",status_code=422)
     else:
